@@ -31,8 +31,8 @@ function hex2bin(hexStr){
 }
 
 function addTowStringsAsNumbers(str1, str2){
-  str1a = str1.split('').reverse();
-  str2a = str2.split('').reverse();
+  str1a = (str1 + "").split('').reverse();
+  str2a = (str2 + "").split('').reverse();
   let output = '';
   let longer = Math.max(str1.length, str2.length);
   let carry = false;
