@@ -287,7 +287,7 @@ function toRMDstring(hashcode)
 
 function RMDstring(message)
 {
-    var hashcode = RMD(message);
+    var hashcode = RMD(hex2bin(message));
     var retString = "";
 
     for (var i=0; i < RMDsize/8; i++)
