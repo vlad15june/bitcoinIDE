@@ -422,7 +422,7 @@ interpreter.prototype.nextStep = function (mainstack, altstack, script, index) {
 		case "OP_1ADD":
 			var top = mainstack.pop();
 			if (top == null) return -1;
-			mainstack.push(top + 1);
+			mainstack.push(addTowStringsAsNumbers(top, "01"));
 			break;
 		case "OP_1SUB":
 			var top = mainstack.pop()
@@ -473,7 +473,7 @@ interpreter.prototype.nextStep = function (mainstack, altstack, script, index) {
 			if (top == null) return -1;
 			var second = mainstack.pop();
 			if (second == null) return -1;
-			mainstack.push(top + second);
+			mainstack.push(addTowStringsAsNumbers(top, second));
 			break;
 		case "OP_SUB":
 			var top = mainstack.pop();
@@ -741,7 +741,7 @@ interpreter.prototype.nextStep = function (mainstack, altstack, script, index) {
 				var val = current_command.search(/[A-Fa-f0-9]+/);
 				if (val == -1) break;
 				val = current_command.match(/[A-Fa-f0-9]+/);
-				val = val[0].length > 12 ? val[0].toLowerCase() : parseInt(val, 16);
+				val = val[0];
 				mainstack.push(val);
 			}
 			break;
