@@ -741,7 +741,7 @@ interpreter.prototype.nextStep = function (mainstack, altstack, script, index) {
 				var val = current_command.search(/[A-Fa-f0-9]+/);
 				if (val == -1) break;
 				val = current_command.match(/[A-Fa-f0-9]+/);
-				val = val[0];
+				val = val[0].toLowerCase();
 				mainstack.push(val);
 			}
 			break;
