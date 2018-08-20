@@ -398,7 +398,7 @@ interpreter.prototype.nextStep = function (mainstack, altstack, script, index) {
 			if (first == null) return -1;
 			var second = mainstack.pop();
 			if (second == null) return -1;
-			if (first === second)
+			if ((first + "") === (second + ""))
 				mainstack.push(1);
 			else
 				mainstack.push(0);
